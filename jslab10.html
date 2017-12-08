@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Lab 10</title>
+  <!-- Thom Lisman 97034440 -->
+  <script type="text/javascript">
+    function exchange(bedrag, conversie) {
+      var valutas = new Array();
+          valutas['eurodollar'] = 1.36;
+          valutas['dollareuro'] = 0.74;
+          valutas['euroruble'] = 48.50;
+          valutas['rubleeuro'] = 0.02;
+
+          resultaat = bedrag *  valutas[conversie];
+        return(resultaat);
+    }
+  </script>
+  </head>
+  <body>
+    <form name='form'>
+      <input type="text" name="bedrag" placeholder="vul het bedrag in" />
+        <select name="conversie">
+          <option value="eurodollar">euro/dollar</option>
+          <option value="dollareuro">dollar/euro</option>
+          <option value="euroruble">euro/ruble</option>
+          <option value="rubleeuro">ruble/euro</option>
+        </select>
+      <input type="button" value="converteren"
+      onclick="document.write('<h3>Lab 10</h3><br><br>Functimeline<br><br>conversie in euros:' + exchange(document.form.bedrag.value,document.form.conversie.value))">
+    </form>
+  </body>
